@@ -29,7 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "TelegramDesktop",  NULL,       NULL,       1 << 3,       0,           -1 },
 };
 
 /* layout(s) */
@@ -39,9 +39,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "|  T",      tile },    /* first entry is default */
+	{ "|  F",      NULL },    /* no layout function means floating behavior */
+	{ "|  M",      monocle },
 };
 
 /* key definitions */
