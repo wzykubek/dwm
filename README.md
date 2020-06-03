@@ -11,5 +11,6 @@
 + shiftview
 + [sticky](https://dwm.suckless.org/patches/sticky/)
 + [tab](https://dwm.suckless.org/patches/tab/)
++ [zoomswap](https://dwm.suckless.org/patches/zoomswap/)
 
 To get more info read source code. 🙃
