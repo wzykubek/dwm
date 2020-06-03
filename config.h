@@ -6,6 +6,14 @@ static const unsigned int snap      = 32; /* snap pixel */
 static const int rmaster            = 0;  /* 1 means master-area is initially on the right */
 static const int showbar            = 1;  /* 0 means no bar */
 static const int topbar             = 1;  /* 0 means bottom bar */
+
+/*   Display modes of the tab bar: never shown, always shown, shown only in */
+/*   monocle mode in presence of several windows.                           */
+/*   Modes after showtab_nmodes are disabled                                */
+enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
+static const int showtab            = showtab_auto; /* Default tab bar show mode */
+static const int toptab             = False;    /* False means bottom tab bar */
+
 static const char *fonts[]          = { "monospace:size=9" };
 static const char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]           = "#1b1b1b";
@@ -64,6 +72,7 @@ static Key keys[] = {
   /* modifier                 key           function           argument */
   { MODKEY|ControlMask,       XK_r,         xrdb,              {.v = NULL } },
   { MODKEY|ShiftMask,         XK_b,         togglebar,         {0} },
+  { MODKEY|ShiftMask,         XK_w,         tabmode,           {-1} },
   { MODKEY|ControlMask,       XK_n,         togglealttag,      {0} },
   { MODKEY,                   XK_r,         togglermaster,     {0} },
   { MODKEY,                   XK_v,         togglescratch,     {.v = scratchpadcmd } },
@@ -113,4 +122,5 @@ static Button buttons[] = {
   { ClkTagBar,            0,              Button3,        toggleview,     {0} },
   { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
   { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+  { ClkTabBar,            0,              Button1,        focuswin,       {0} },
 };

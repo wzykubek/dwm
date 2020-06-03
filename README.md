@@ -10,5 +10,6 @@
 + [monoclesymbol](https://dwm.suckless.org/patches/monoclesymbol/)
 + shiftview
 + [sticky](https://dwm.suckless.org/patches/sticky/)
++ [tab](https://dwm.suckless.org/patches/tab/)
 
 To get more info read source code. 🙃
