@@ -9,5 +9,6 @@
 + [scratchpad](https://dwm.suckless.org/patches/scratchpad/)
 + [monoclesymbol](https://dwm.suckless.org/patches/monoclesymbol/)
 + shiftview
++ [sticky](https://dwm.suckless.org/patches/sticky/)
 
 To get more info read source code. 🙃

@@ -67,6 +67,7 @@ static Key keys[] = {
   { MODKEY|ControlMask,       XK_n,         togglealttag,      {0} },
   { MODKEY,                   XK_r,         togglermaster,     {0} },
   { MODKEY,                   XK_v,         togglescratch,     {.v = scratchpadcmd } },
+  { MODKEY|ControlMask,       XK_s,         togglesticky,      {0} },
   { MODKEY,                   XK_j,         focusstack,        {.i = +1 } },
   { MODKEY,                   XK_period,    shiftview,         {.i = +1 } },
   { MODKEY,                   XK_comma,     shiftview,         {.i = -1 } },
