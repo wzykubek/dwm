@@ -255,6 +255,7 @@ static void updatetitle(Client *c);
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
+static void shiftview(const Arg *arg);
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
 static int xerror(Display *dpy, XErrorEvent *ee);
@@ -2214,6 +2215,36 @@ view(const Arg *arg)
 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
 	focus(NULL);
 	arrange(selmon);
+}
+
+void
+shiftview(const Arg *arg) {
+	Arg a;
+	Monitor *m;
+	Client *c;
+	unsigned visible = 0;
+	int i = arg->i;
+	int nextseltags, curseltags = selmon->tagset[selmon->seltags];
+
+	do {
+		if(i > 0) // left circular shift
+			nextseltags = (curseltags << i) | (curseltags >> (LENGTH(tags) - i));
+
+		else // right circular shift
+			nextseltags = curseltags >> (- i) | (curseltags << (LENGTH(tags) + i));
+
+		// Check if tag is visible
+		for (m = mons; m && !visible; m = m->next)
+			for (c = m->clients; c; c = c->next)
+				if (nextseltags & c->tags) {
+						visible = 1;
+						break;
+				}
+		i += arg->i;
+	} while (!visible);
+
+	a.i = nextseltags;
+	view(&a);
 }
 
 Client *

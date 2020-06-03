@@ -8,5 +8,6 @@
 + [xrdb](https://dwm.suckless.org/patches/xrdb/)
 + [scratchpad](https://dwm.suckless.org/patches/scratchpad/)
 + [monoclesymbol](https://dwm.suckless.org/patches/monoclesymbol/)
++ shiftview
 
 To get more info read source code. 🙃
