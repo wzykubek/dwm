@@ -42,7 +42,6 @@ static const Rule rules[] = {
   /* class            instance      title       tags mask     isfloating   monitor */
   { "TelegramDesktop",  NULL,       NULL,       1 << 3,       0,           -1 },
   { "firefox",          NULL,       NULL,       1 << 2,       0,           -1 },
-  { "KeePassXC",        NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
