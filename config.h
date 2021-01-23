@@ -30,7 +30,7 @@ static char *colors[][3]            = {
 };
 
 /* tagging */
-static const char *tags[] =          { "", "", "", "", "5", "6", "7", "8", "" };
+static const char *tags[] =          { "", "", "", "", "", "6", "7", "8", "" };
 static const char *tagsalt[] =       { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -42,7 +42,9 @@ static const Rule rules[] = {
    */
   /* class              instance    title             tags mask     isfloating    isterminal   noswallow    monitor */
   { "TelegramDesktop",  NULL,       NULL,             1 << 3,       0,            -1,           0,           -1 },
-  { "firefox",          NULL,       NULL,             1 << 2,       0,            -1,           0,           -1 },
+  { "Spotify",          NULL,       NULL,             1 << 4,       0,            -1,           0,           -1 },
+  { "Chromium",         NULL,       NULL,             1 << 2,       0,            -1,           0,           -1 },
+  { "KeePassXC",        NULL,       NULL,             1 << 8,       0,            -1,           0,           -1 },
 	{ "Gimp",             NULL,       NULL,             0,            0,             0,           0,           -1 },
 	{ "St",               NULL,       NULL,             0,            0,             1,           0,           -1 },
 	{ NULL,               NULL,       "Event Tester",   0,            1,             0,           1,           -1 }, /* xev */
